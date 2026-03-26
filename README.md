@@ -264,4 +264,3 @@ Action: Capture screen → OCR extract → AI process → Auto-insert
 
 - Backend: FastAPI + MongoDB + Ollama
 - Frontend: Chrome Extension + Android Keyboard
-- License: Private Project
