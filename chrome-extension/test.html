@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Keyboard Extension Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
+        }
+        .test-text {
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        .test-text:hover {
+            background: #f9f9f9;
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .error-text {
+            color: #d32f2f;
+        }
+        .professional-text {
+            color: #1976d2;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 AI Keyboard Extension Test Page</h1>
+    
+    <div class="instructions">
+        <h3>📋 How to Test:</h3>
+        <ol>
+            <li>Make sure the AI Keyboard extension is installed and your RAG server is running</li>
+            <li>Select any text below by clicking and dragging</li>
+            <li>Right-click to open the context menu</li>
+            <li>Choose from "AI Keyboard Assistant" options</li>
+            <li>Wait for the AI response to appear in a floating window</li>
+        </ol>
+    </div>
+
+    <div class="test-section">
+        <h3>✏️ Grammar Fix Test</h3>
+        <p>Select the text below and use "Fix Grammar":</p>
+        <div class="test-text error-text">
+            This sentance has many erors in it. The grammer is incorect and their are speling mistakes to fix.
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h3>🧠 RAG Reply Test</h3>
+        <p>Select the text below and use "RAG Reply" (requires uploaded documents):</p>
+        <div class="test-text">
+            What are the key policies mentioned in our company handbook regarding remote work and vacation time?
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h3>💬 General Reply Test</h3>
+        <p>Select the text below and use "General Reply":</p>
+        <div class="test-text">
+            Can you explain the benefits of using artificial intelligence in modern business applications?
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h3>👔 Professional & Polite Test</h3>
+        <p>Select the text below and use "Make Professional & Polite":</p>
+        <div class="test-text professional-text">
+            hey, ur late with the report again. this is getting annoying. can u please get it done asap? thx
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h3>📝 Describe Test</h3>
+        <p>Select the text below and use "Describe":</p>
+        <div class="test-text">
+            Artificial intelligence (AI) is intelligence demonstrated by machines, in contrast to the natural intelligence displayed by humans and animals.
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h3>📧 Email Response Test</h3>
+        <p>Select the text below and try different options:</p>
+        <div class="test-text">
+            Hi John, I hope this email finds you well. I wanted to follow up on our discussion about the project timeline. Could we schedule a meeting next week to discuss the next steps? Best regards, Sarah
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h3>🔧 Technical Text Test</h3>
+        <p>Select the text below and test various options:</p>
+        <div class="test-text">
+            The API endpoint is returning a 500 error when we try to POST data to /api/users. The error message says "Internal Server Error" but doesn't give more details. How should we debug this issue?
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h3>🚨 Troubleshooting:</h3>
+        <ul>
+            <li><strong>Context menu not appearing:</strong> Refresh this page and try again</li>
+            <li><strong>No response from AI:</strong> Check if your RAG server is running on the correct URL</li>
+            <li><strong>Authentication errors:</strong> Login through the extension popup first</li>
+            <li><strong>RAG replies not working:</strong> Upload some documents first through the extension</li>
+        </ul>
+    </div>
+
+    <div class="instructions">
+        <h3>⚙️ Extension Settings:</h3>
+        <p>Click the extension icon in your Chrome toolbar to:</p>
+        <ul>
+            <li>Configure server URL (default: http://localhost:8000)</li>
+            <li>Login/register for user accounts</li>
+            <li>Upload PDF documents for RAG functionality</li>
+            <li>View and manage your uploaded documents</li>
+        </ul>
+    </div>
+
+    <script>
+        // Add some interactivity to highlight selectable text
+        document.querySelectorAll('.test-text').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 2px 8px rgba(76, 175, 80, 0.3)';
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                this.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

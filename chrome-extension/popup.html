@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Keyboard RAG Assistant</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="icons/logo.png" alt="AI Keyboard" class="logo">
+      <h1>AI Keyboard RAG Assistant</h1>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="settings">Settings</button>
+      <button class="tab-btn" data-tab="upload">Upload PDF</button>
+      <button class="tab-btn" data-tab="documents">Documents</button>
+      <button class="tab-btn" data-tab="auth">Account</button>
+    </div>
+
+    <!-- Settings Tab -->
+    <div class="tab-content active" id="settings">
+      <div class="section">
+        <h3>Server Configuration</h3>
+        <div class="form-group">
+          <label for="baseUrl">Base URL:</label>
+          <input type="text" id="baseUrl" placeholder="http://localhost:8000" value="http://localhost:8000">
+        </div>
+        <button id="testConnection" class="btn btn-secondary">Test Connection</button>
+        <div id="connectionStatus" class="status"></div>
+      </div>
+
+      <div class="section">
+        <h3>How to Use</h3>
+        <ol class="instructions">
+          <li>Select any text on a webpage</li>
+          <li>Right-click to open context menu</li>
+          <li>Choose from AI Keyboard Assistant options:
+            <ul>
+              <li><strong>Fix Grammar</strong> - Correct spelling and grammar</li>
+              <li><strong>RAG Reply</strong> - Reply using your uploaded documents</li>
+              <li><strong>General Reply</strong> - Generate a general response</li>
+              <li><strong>Make Professional</strong> - Rewrite in professional tone</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Upload Tab -->
+    <div class="tab-content" id="upload">
+      <div class="section">
+        <h3>Upload PDF Documents</h3>
+        <div class="upload-area" id="uploadArea">
+          <div class="upload-icon">📄</div>
+          <p>Drag & drop PDF files here or click to browse</p>
+          <input type="file" id="fileInput" accept=".pdf,.txt,.md" multiple hidden>
+          <button id="browseFiles" class="btn btn-primary">Browse Files</button>
+        </div>
+        <div id="uploadProgress" class="progress-container" style="display: none;">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="progress-text" id="progressText">Uploading...</div>
+        </div>
+        <div id="uploadStatus" class="status"></div>
+      </div>
+    </div>
+
+    <!-- Documents Tab -->
+    <div class="tab-content" id="documents">
+      <div class="section">
+        <h3>Your Documents</h3>
+        <button id="refreshDocs" class="btn btn-secondary">Refresh</button>
+        <div id="documentsList" class="documents-list">
+          <div class="loading">Loading documents...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Auth Tab -->
+    <div class="tab-content" id="auth">
+      <div class="section" id="loginSection">
+        <h3>Login</h3>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" placeholder="Password">
+        </div>
+        <div class="auth-buttons">
+          <button id="loginBtn" class="btn btn-primary">Login</button>
+          <button id="registerBtn" class="btn btn-secondary">Register</button>
+        </div>
+        <div id="authStatus" class="status"></div>
+      </div>
+
+      <div class="section" id="userSection" style="display: none;">
+        <h3>Account</h3>
+        <div id="userInfo" class="user-info"></div>
+        <button id="logoutBtn" class="btn btn-danger">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

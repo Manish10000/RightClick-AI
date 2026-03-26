@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="4dp"
+    android:background="#2A2A2A"
+    android:layout_marginBottom="2dp"
+    android:baselineAligned="false">
+
+    <!-- Copied/Original Text Column -->
+    <TextView
+        android:id="@+id/tvOriginal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="#AAAAAA"
+        android:textSize="11sp"
+        android:maxLines="4"
+        android:ellipsize="end"
+        android:padding="4dp"
+        android:background="#1A1A1A"/>
+
+    <!-- AI Reply Column -->
+    <TextView
+        android:id="@+id/tvReply"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:maxLines="4"
+        android:ellipsize="end"
+        android:padding="4dp"
+        android:layout_marginStart="2dp"
+        android:background="#333333"
+        android:clickable="true"
+        android:focusable="true"
+        android:hint="Generating..."
+        android:textColorHint="#666666"/>
+
+    <!-- Individual Delete -->
+    <ImageButton
+        android:id="@+id/btnDelete"
+        android:layout_width="32dp"
+        android:layout_height="match_parent"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:background="?android:attr/selectableItemBackground"
+        android:tint="#FF5252"
+        android:contentDescription="Clear item" />
+</LinearLayout>

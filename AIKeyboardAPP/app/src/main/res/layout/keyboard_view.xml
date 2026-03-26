@@ -1,0 +1,357 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#222222"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <!-- AI Suggestion/Loading Header -->
+    <FrameLayout
+        android:id="@+id/aiHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:background="#333333"
+        android:padding="4dp"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/loadingProgress"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvAiReply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground" />
+    </FrameLayout>
+
+    <!-- Spam Dialog UI (Overlay) -->
+    <LinearLayout
+        android:id="@+id/layoutSpam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#333333"
+        android:padding="8dp"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/etSpamText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Text to spam"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#AAAAAA"
+            android:background="#222222"
+            android:padding="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+            <EditText
+                android:id="@+id/etSpamCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Count (e.g. 200)"
+                android:inputType="number"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#AAAAAA"
+                android:background="#222222"
+                android:padding="8dp" />
+            <EditText
+                android:id="@+id/etSpamInterval"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Interval (sec)"
+                android:inputType="numberDecimal"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#AAAAAA"
+                android:background="#222222"
+                android:padding="8dp"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            <Button
+                android:id="@+id/btnStartSpam"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Start Spam"
+                android:backgroundTint="#FF5252" />
+            <Button
+                android:id="@+id/btnCancelSpam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Close"
+                android:layout_marginStart="4dp"
+                android:backgroundTint="#555555" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Tab Selection -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <ImageButton
+            android:id="@+id/tabMain"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="Main Toolbar" />
+        <ImageButton
+            android:id="@+id/tabKeys"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_edit"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="Text Tools" />
+        <ImageButton
+            android:id="@+id/tabQwerty"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_dialog_dialer"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="QWERTY Keyboard" />
+        <ImageButton
+            android:id="@+id/tabClipboard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_recent_history"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="Clipboard" />
+        <ImageButton
+            android:id="@+id/tabScreenshot"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_camera"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="Screenshots" />
+        <ImageButton
+            android:id="@+id/btnOpenSpam"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:src="@android:drawable/ic_menu_send"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="Spam Tool" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp">
+            <View
+                android:id="@+id/viewServerStatus"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginEnd="4dp" />
+            <TextView
+                android:id="@+id/tvServerStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Offline"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnSwitchInput"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:src="@android:drawable/ic_menu_preferences"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="Switch Input Method" />
+    </LinearLayout>
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <!-- 0: AI View -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/btnGenerate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✨ Generate AI Reply"
+                android:backgroundTint="#4CAF50" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Knowledge Base Docs:"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:paddingTop="8dp"/>
+
+            <TextView
+                android:id="@+id/tvDocsList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No documents found"
+                android:textColor="#AAAAAA"
+                android:textSize="11sp"
+                android:maxLines="3"
+                android:ellipsize="end" />
+        </LinearLayout>
+
+        <!-- 1: Text Tools / AI Actions -->
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="4dp">
+
+                <ProgressBar android:id="@+id/toolsLoader" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:indeterminate="true" android:visibility="gone" />
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="3">
+
+                    <Button android:id="@+id/btnSelectAll" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:text="Select All" android:textSize="11sp" android:backgroundTint="#2196F3" />
+                    <Button android:id="@+id/btnAllCaps" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:text="ABC" android:textSize="11sp" />
+                    <Button android:id="@+id/btnTitleCase" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:text="Abc" android:textSize="11sp" />
+
+                    <Button android:id="@+id/btnBold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:text="Bold" android:textSize="11sp" />
+                    <Button android:id="@+id/btnFormal" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:text="Formal" android:textSize="11sp" android:backgroundTint="#607D8B" />
+                    <Button android:id="@+id/btnGrammar" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:text="Grammar" android:textSize="11sp" android:backgroundTint="#607D8B" />
+
+                    <Button android:id="@+id/btnProfessional" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:text="Pro" android:textSize="11sp" android:backgroundTint="#607D8B" />
+                    <Button android:id="@+id/btnReply" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:text="Reply" android:textSize="11sp" android:backgroundTint="#FF5722" />
+                </GridLayout>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Select text before applying AI tools" android:textColor="#888888" android:gravity="center" android:textSize="10sp" android:paddingTop="4dp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- 2: Simple QWERTY Keyboard Tab -->
+        <include layout="@layout/keyboard_qwerty" />
+
+        <!-- 3: Clipboard History -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btnClearAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clear All"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_gravity="end"
+                android:textColor="#FF5252" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHistory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <!-- 4: Screenshot View -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btnCaptureScreenshot"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="📸 Capture"
+                    android:backgroundTint="#2196F3"
+                    android:textSize="12sp" />
+                <Button
+                    android:id="@+id/btnRetryOcr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Retry"
+                    android:visibility="gone"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#111111">
+
+                <ImageView
+                    android:id="@+id/ivScreenshotPreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerInside"
+                    android:contentDescription="Screenshot Preview" />
+
+                <LinearLayout
+                    android:id="@+id/llScreenshotStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:background="#88000000">
+
+                    <ProgressBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tvScreenshotStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Extracting text..."
+                        android:textColor="#FFFFFF"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvExtractedText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="#AA000000"
+                    android:maxLines="2"
+                    android:padding="4dp"
+                    android:textColor="#00FF00"
+                    android:textSize="10sp" />
+            </FrameLayout>
+        </LinearLayout>
+    </ViewFlipper>
+</LinearLayout>

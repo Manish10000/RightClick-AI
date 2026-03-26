@@ -1,0 +1,280 @@
+/* AI Keyboard RAG Assistant - Content Styles */
+
+.ai-keyboard-window {
+  position: fixed !important;
+  background: white !important;
+  border: 2px solid #4CAF50 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  z-index: 2147483647 !important;
+  min-width: 300px !important;
+  max-width: 500px !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 14px !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  pointer-events: auto !important;
+}
+
+#ai-keyboard-backdrop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.1) !important;
+  z-index: 2147483646 !important;
+  display: block !important;
+  visibility: visible !important;
+  cursor: pointer !important;
+}
+
+.ai-keyboard-header {
+  background: #4CAF50 !important;
+  color: white !important;
+  padding: 10px 15px !important;
+  border-radius: 6px 6px 0 0 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  cursor: move !important;
+  user-select: none !important;
+}
+
+.ai-keyboard-title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.ai-keyboard-close {
+  background: none !important;
+  border: none !important;
+  color: white !important;
+  font-size: 18px !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  width: 24px !important;
+  height: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 3px !important;
+  transition: background-color 0.2s !important;
+  font-weight: bold !important;
+}
+
+.ai-keyboard-close:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.ai-keyboard-content {
+  padding: 15px !important;
+  background: white !important;
+}
+
+.ai-keyboard-result-text {
+  background: #f8f9fa !important;
+  border: 1px solid #e9ecef !important;
+  border-radius: 4px !important;
+  padding: 15px !important;
+  margin-bottom: 15px !important;
+  line-height: 1.6 !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  max-height: 400px !important;
+  overflow-y: auto !important;
+  color: #333 !important;
+  font-size: 14px !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  text-align: left !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  cursor: text !important;
+}
+
+/* Markdown styling within result text */
+.ai-keyboard-result-text h1 {
+  font-size: 18px !important;
+  font-weight: bold !important;
+  margin: 15px 0 10px 0 !important;
+  color: #2c3e50 !important;
+}
+
+.ai-keyboard-result-text h2 {
+  font-size: 16px !important;
+  font-weight: bold !important;
+  margin: 12px 0 8px 0 !important;
+  color: #34495e !important;
+}
+
+.ai-keyboard-result-text h3 {
+  font-size: 15px !important;
+  font-weight: bold !important;
+  margin: 10px 0 6px 0 !important;
+  color: #34495e !important;
+}
+
+.ai-keyboard-result-text p {
+  margin: 8px 0 !important;
+  line-height: 1.6 !important;
+}
+
+.ai-keyboard-result-text strong {
+  font-weight: bold !important;
+  color: #2c3e50 !important;
+}
+
+.ai-keyboard-result-text em {
+  font-style: italic !important;
+}
+
+.ai-keyboard-result-text ul {
+  margin: 10px 0 !important;
+  padding-left: 20px !important;
+}
+
+.ai-keyboard-result-text li {
+  margin: 4px 0 !important;
+  list-style-type: disc !important;
+}
+
+.ai-keyboard-result-text code {
+  background: #e8f4f8 !important;
+  padding: 2px 4px !important;
+  border-radius: 3px !important;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+  font-size: 13px !important;
+  color: #d63384 !important;
+}
+
+.ai-keyboard-result-text pre {
+  background: #f8f9fa !important;
+  border: 1px solid #e9ecef !important;
+  border-radius: 4px !important;
+  padding: 10px !important;
+  margin: 10px 0 !important;
+  overflow-x: auto !important;
+}
+
+.ai-keyboard-result-text pre code {
+  background: none !important;
+  padding: 0 !important;
+  color: #333 !important;
+}
+
+.ai-keyboard-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.ai-keyboard-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.ai-keyboard-btn:hover {
+  background: #45a049;
+}
+
+.ai-keyboard-copy {
+  background: #2196F3;
+}
+
+.ai-keyboard-copy:hover {
+  background: #1976D2;
+}
+
+.ai-keyboard-loading {
+  position: absolute;
+  background: white;
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.ai-keyboard-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #4CAF50;
+  border-radius: 50%;
+  animation: ai-keyboard-spin 1s linear infinite;
+}
+
+@keyframes ai-keyboard-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.ai-keyboard-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10001;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  animation: ai-keyboard-slide-in 0.3s ease-out;
+}
+
+.ai-keyboard-notification.ai-keyboard-error {
+  background: #f44336;
+}
+
+@keyframes ai-keyboard-slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Scrollbar styling for result text */
+.ai-keyboard-result-text::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ai-keyboard-result-text::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.ai-keyboard-result-text::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.ai-keyboard-result-text::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}

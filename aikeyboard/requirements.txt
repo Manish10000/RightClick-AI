@@ -1,0 +1,33 @@
+# FastAPI and server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+
+# From brain4
+sentence-transformers>=2.6.0
+PyPDF2>=3.0.0
+scikit-learn>=1.3.0
+numpy>=1.24.0
+pymongo>=4.6.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+
+# Additional
+pydantic>=2.0.0
+pydantic[email]>=2.0.0
+aiofiles>=23.2.1
+
+# Authentication & Security
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+python-multipart>=0.0.6
+
+# Database
+sqlalchemy>=2.0.0
+alembic>=1.12.0
+
+# For PostgreSQL (optional, uncomment if using PostgreSQL)
+# psycopg2-binary>=2.9.0
+
+# For MySQL (optional, uncomment if using MySQL)
+# pymysql>=1.1.0
