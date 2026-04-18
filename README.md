@@ -24,11 +24,7 @@
 
 Watch RightClick AI in action:
 
-<div align="center">
-  <video src="https://github.com/Manish10000/RightClick-AI/raw/main/Demo/Demo.mp4" width="100%" controls>
-    Your browser does not support the video tag. You can <a href="https://github.com/Manish10000/RightClick-AI/raw/main/Demo/Demo.mp4">download the video</a> instead.
-  </video>
-</div>
+https://github.com/Manish10000/RightClick-AI/raw/main/Demo/Demo.mp4
 
 ## 📁 Project Structure
 
