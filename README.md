@@ -24,7 +24,7 @@
 
 Watch RightClick AI in action:
 
-<video src="https://github.com/Manish10000/RightClick-AI/raw/main/Demo/Demo.mp4" controls width="100%"></video>
+[![RightClick AI Demo](https://img.youtube.com/vi/wbMPIt_bGbo/maxresdefault.jpg)](https://youtu.be/wbMPIt_bGbo)
 
 ## 📁 Project Structure
 
